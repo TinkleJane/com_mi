@@ -1,0 +1,93 @@
+/* 顶部导航栏 */
+.topbar-wrapper{
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    background-color: #333;
+}
+.service, .topbar li{
+    float: left;
+}
+.topbar a{
+    font-size: 12px;
+    color:#b0b0b0;
+    display:block; /* 设置超链接为块元素，方便布局，让宽高有效 */
+}
+.topbar :hover{
+    color:#fff;
+}
+.topbar .line{
+    font-size: 12px;
+    color:#424242;
+    margin:0 8px;
+}
+
+/* 购物车 */
+.shop-cart, .user-info{
+    float: right;
+}
+.shop-cart{
+    margin-left: 26px;
+}
+.shop-cart a{
+     width: 120px;
+    background-color: #424242;
+    text-align: center;
+}
+.shop-cart:hover a{
+    background-color: #fff;
+    color: #FF6700;
+}
+/* 下载app */
+.app{
+    position: relative;
+}
+.app::after{
+    content:'';
+    display: none;
+    position: absolute;
+    width: 0;
+    height: 0;
+    /* border:none;  设置border：none 再设置底边无效
+    border-bottom:8px solid #fff; */
+    /* 设置四个方向的边框 */
+    border: 8px solid transparent;
+    /* 单独设置下边框的颜色 */
+    border-bottom-color: #fff;
+    /*  */
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin:auto;
+}
+.app:hover .qrcode,
+.app:hover::after{
+    display: block;
+    height: 148px;
+}
+
+.app .qrcode{
+    display:none;
+    left: -40px;
+    width: 124px;
+    height: 0;
+    overflow: hidden; /* ？？ */
+    position: absolute;  /* 开启绝对定位后，元素会从文档流中脱离，对父元素.app不会被子元素 qrcode 撑开 */
+    /* background-color: #aaa; */
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,.3);
+    line-height: 1;
+    text-align: center;
+
+    /* transition: 用于为样式设置过渡效果 */
+    transition: height 0.5s;
+}
+.qrcode img{
+    width: 90px;
+    margin:17px 18px 12px;
+}
+
+.app .qrcode span{
+    font-size: 14px;
+    color: #000;
+}
