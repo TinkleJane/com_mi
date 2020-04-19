@@ -81,6 +81,7 @@
 
     /* transition: 用于为样式设置过渡效果 */
     transition: height 0.5s;
+    z-index: 9999;
 }
 .qrcode img{
     width: 90px;
@@ -90,4 +91,106 @@
 .app .qrcode span{
     font-size: 14px;
     color: #000;
+}
+.header-wrapper{
+    position: relative;
+}
+.header{
+    height: 100px;
+    /* background-color: yellow; */
+}
+.header .logo{
+    /* position: absolute; 绝对定位脱离文档流，后面的浮动元素会上移 */
+    width: 55px;
+    height: 55px;
+    overflow:hidden;
+    float: left;
+    margin-top:22px;
+    background-color: #FF6700;
+}
+.header .logo a{
+    position: absolute;
+    left:0;
+    width: 55px;
+    height: 55px;
+    background-image: url(../img/mi-logo.png);
+    background-position: center;
+}
+.header .logo .home{
+    background-image: url(../img/mi-home.png);
+    left: -55px;
+}
+.header .logo:hover .mi{
+    left:55px;
+}
+.header .logo:hover .home{
+    left:0;
+}
+
+.header .nav-wrapper{
+    float: left;
+    margin-left: 7px;
+}
+.header .nav{
+    height: 100px;
+    line-height: 100px;
+    padding-left: 58px;
+}
+.nav > li{
+    float: left;
+}
+.nav-wrapper li a{
+    display: block;
+    font-size: 16px;
+    margin-right: 20px;
+}
+
+.nav .goods-info{
+    /* height: 228px; */
+    height: 0;
+    overflow: hidden;
+    width: 100%;
+    background-color: #fff;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    transition: height 0.3s;
+    z-index: 9999;
+}
+
+/* .nav li:not(:first-of-type):not(:nth-child(10)):not(:nth-child(9)):hover ~ .goods-info, */
+.nav .show-goods:hover ~ .goods-info,
+.goods-info:hover {
+    height: 228px;
+    border-top: 1px solid rgb(224, 224, 224);
+    box-shadow: 0 5px 3px rgba(0, 0, 0, .2);
+}
+.search-wrapper{
+    width: 296px;
+    height: 50px;
+    float: right;
+    margin-top: 25px;
+}
+.search-wrapper .search-inp{
+    box-sizing: border-box;
+    width: 244px;
+    border: none;
+    float: left;
+    padding: 0 10px;
+    height: 50px;
+    font-size: 16px;
+    border: 1px solid rgb(224, 224, 224);
+    outline: none;
+}
+.search-wrapper .search-btn{
+    float: left;
+    height: 50px;
+    width: 52px;
+    padding: 0;
+    border: none;
+    background-color: #fff;
+    color: #616161;
+    font-size: 16px;
+    border: 1px solid rgb(224, 224, 224);
+    border-left: none;
 }
